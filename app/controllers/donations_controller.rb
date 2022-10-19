@@ -37,9 +37,9 @@ class DonationsController < ApplicationController
 
     def donation_params
         params.permit(
-            :donation_name
-            :description
-            :donation_amount
+            :donation_name,
+            :description,
+            :donation_amount,
             :country_code
         )
     end

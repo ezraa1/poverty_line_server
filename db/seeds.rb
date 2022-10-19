@@ -112,17 +112,17 @@ Donation.create(
     description: "This donation goes to orphans to help them raise funds to continue with their education.",
     donation_amount: "USD 6000",
     region_id: "1",
-    country_code: "213"
+    country_code: 221
 
 )
 
 Donation.create(
-    user_id: "3",
+    user_id: "2",
     donation_name: "Feed A Family",
     description: "This donation will provide the less fortunate families with food.",
     donation_amount: "USD 3500",
     region_id: "2",
-    country_code: "377"
+    country_code: 260
 )
 
 Donation.create(
@@ -130,8 +130,8 @@ Donation.create(
     donation_name: "AIDS Fund",
     description: "Money donated will be used to provide ARVs to people living with AIDS",
     donation_amount: "USD 10000",
-    region_id: "3",
-    country_code: "886"
+    region_id: "7",
+    country_code: 255
 )
 puts "Done seeding"
 
