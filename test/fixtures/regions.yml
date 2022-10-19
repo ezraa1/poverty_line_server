@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sub_region: MyString
+  sub_region: 1
+  country_name: 1
+  country_code: 1
+  city: MyString
+  city_reporting_level: MyString
+
+two:
+  sub_region: MyString
+  sub_region: 1
+  country_name: 1
+  country_code: 1
+  city: MyString
+  city_reporting_level: MyString
