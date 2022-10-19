@@ -12,7 +12,7 @@ class DonationsController < ApplicationController
     end
 
     def create
-        donation = Donation.create(donation_params)
+        donation = Donation.create!(donation_params)
         render json: donation, status: :created
     end
 
