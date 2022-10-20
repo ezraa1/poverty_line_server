@@ -16,6 +16,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :access_to_electricity
       t.string :medical_insurance
       t.string :education_level
+      # t.string :religion
+      # t.boolean :is_disabled
 
       t.timestamps
     end
