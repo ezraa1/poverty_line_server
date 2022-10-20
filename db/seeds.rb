@@ -15,7 +15,7 @@
     age: "22",
     city: "Nakuru",
     country_name: "Kenya",
-    region_id: 3,
+   region_id: 3,
     marital_status: "Single",
     employment_status: "Unemployed",
     monthly_income: 5000,
@@ -24,7 +24,8 @@
     medical_insurance: "No",
     education_level: "O-Level",
     religion: "Christian",
-    is_disabled: true 
+    is_disabled: true,
+    password: "Password"
  })
 
 
@@ -46,7 +47,8 @@
     medical_insurance: "No",
     education_level: "High School",
     religion: "Muslim",
-    is_disabled: false 
+    is_disabled: false,
+    password: "Password"
  })
 
  puts "Done seeding"
