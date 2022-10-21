@@ -14,6 +14,6 @@ class User < ApplicationRecord
      uniqueness: true
      
     validates :password, length: { in: 6..20 }
-
+    validates :age, numericality: { only_integer: true }
     validates :full_name, presence: true,  length: { minimum: 2 }
 end
