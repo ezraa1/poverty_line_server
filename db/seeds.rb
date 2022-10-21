@@ -61,7 +61,7 @@ Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_na
      
 
 
- User.create ({
+ User.create! ({
     full_name: "Luke Gamu",
     user_type: 1,
     email: "luke@star.com",
@@ -84,7 +84,7 @@ Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_na
 
 
 
- User.create ({
+ User.create! ({
     full_name: "Matthew Nana",
     user_type: 1,
     email: "nana@gmail.com",

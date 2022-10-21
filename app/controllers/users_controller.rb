@@ -16,26 +16,61 @@ class UsersController < ApplicationController
 
   # POST
   def create 
-    user = User.create(user_params)
+    user = User.create!(user_params)
     render json: user, status: :created
   end
 
+  # PATCH/PUT /users/1
+  
+    def update
+      user = find_user
+      user.update(user_params)
+        render json:user, status: :accepted
+    end
 
-private
+    # DELETE /users/1
+    
+    def destroy
+      user = find_user
+      user.destroy
+        head :no_content
+    end
+
+
+  private
 
  # Only allow a trusted parameter "white list" through.
 
-  def find_user
-    user = User.find_by(params[:id])
-  end
+      def find_user
+        User.find(params[:id])
+      end
 
-  def user_params
-        params.permit(:full_name, :email, :password, :user_type)
+      def user_params
+        params.permit(
+          :full_name,
+          :email,
+          :gender,
+          :age,
+          :city,
+          :country_name,
+          :region_id,
+          :marital_status,
+          :employment_status,
+          :monthly_income,
+          :access_to_safe_water,
+          :access_to_electricity,
+          :medical_insurance,
+          :education_level,
+          :user_type,
+          :religion,
+          :is_disabled,
+          :password)
       end
 
   def render_unprocessable_entity_response(e)
         render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
   end
+  
 
 end
 
