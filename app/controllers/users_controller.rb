@@ -40,8 +40,10 @@ class UsersController < ApplicationController
     def records
     end
 
-
-  private
+    
+  
+  
+      private
 
  # Only allow a trusted parameter "white list" through.
 

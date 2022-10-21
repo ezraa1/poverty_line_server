@@ -4,5 +4,16 @@ class User < ApplicationRecord
     belongs_to :region
     
     enum user_type: {admin: 0, user: 1}
+
+    #password brcypt mechanism
     has_secure_password
+
+    #validations
+    validates :email,
+     presence: true, 
+     uniqueness: true
+     
+    validates :password, length: { in: 6..20 }
+
+    validates :full_name, presence: true,  length: { minimum: 2 }
 end
