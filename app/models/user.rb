@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
     belongs_to :region
     
-    enum user_type: {admin: 0, user: 1}
+    enum user_type: {admin: 0, regular: 1}
 
     #password brcypt mechanism
     has_secure_password
