@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts ("...seeding data")
 # Eastern Africa
-Region.create!(sub_region: "Eastern Africa", sub_region_code: "EA01", country_name: "BURUNDI", country_code: 257, city: "", city_reporting_level: "Urban" )
+Region.create!(sub_region: "Eastern Africa", sub_region_code: "EA01", country_name: "BURUNDI", country_code: 257, city: "Bujumbura", city_reporting_level: "Urban" )
 Region.create!(sub_region: "Eastern Africa", sub_region_code: "EA01", country_name: "ETHIOPIA", country_code: 251, city: "Addis Ababa", city_reporting_level: "Urban" )
 Region.create!(sub_region: "Eastern Africa", sub_region_code: "EA01", country_name: "TANZANIA", country_code: 255, city: "Dodoma", city_reporting_level: "Urban" )
 Region.create!(sub_region: "Eastern Africa", sub_region_code: "EA01", country_name: "COMOROS", country_code: 269, city: "Moroni", city_reporting_level: "Rural" )

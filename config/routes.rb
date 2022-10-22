@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+resources :regions, only: [ :index, :show, :destroy, :update]
+  get "/regions", to: "regions#index"
+  get "/regions/:id", to: "regions#show"
+  delete "/regions/:id", to: "regions#destroy"
 end
