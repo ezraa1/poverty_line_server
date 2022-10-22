@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get "/regions", to: "regions#index"
+  get "/regions/:id", to: "regions#show"
+  delete "/regions/:id", to: "regions#destroy"
+
   resources :donations
   resources :users
-  resources :regions
+  
+
 end
