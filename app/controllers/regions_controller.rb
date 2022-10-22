@@ -12,7 +12,7 @@ class RegionsController < ApplicationController
 
     def update
         region = Region.find_by(id: params [:id])
-        recipe.update!(recipe_params)
+        region.update!(region_params)
         render json: region
 
     end
