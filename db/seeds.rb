@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 puts ("...seeding data")
 # Eastern Africa
 Region.create!(sub_region: "Eastern Africa", sub_region_code: "EA01", country_name: "BURUNDI", country_code: 257, city: "Bujumbura", city_reporting_level: "Urban" )
@@ -58,4 +59,80 @@ Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_na
 Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_name: "BURKINA FASO", country_code: 226, city: "Ouagadougou", city_reporting_level: "Rural" )
 Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_name: "REP.COTE D'IVOIRE", country_code:225, city: "Yamoussoukro", city_reporting_level: "Rural" )
      
-puts("Done seeding")
+
+
+ User.create! ({
+    full_name: "Luke Gamu",
+    user_type: 1,
+    email: "luke@star.com",
+    gender: "Male",
+    age: "22",
+    city: "Nakuru",
+    country_name: "Kenya",
+   region_id: 3,
+    marital_status: "Single",
+    employment_status: "Unemployed",
+    monthly_income: 5000,
+    access_to_safe_water: "No",
+    access_to_electricity: "Yes",
+    medical_insurance: "No",
+    education_level: "O-Level",
+    religion: "Christian",
+    is_disabled: true,
+    password: "Password"
+ })
+
+
+
+ User.create! ({
+    full_name: "Matthew Nana",
+    user_type: 1,
+    email: "nana@gmail.com",
+    gender: "Male",
+    age: 35,
+    city: "Abuja",
+    country_name: "Nigeria",
+    region_id: 2,
+    marital_status: "Married",
+    employment_status: "Unemployed",
+    monthly_income: 2000,
+    access_to_safe_water: "No",
+    access_to_electricity: "Yes",
+    medical_insurance: "No",
+    education_level: "High School",
+    religion: "Muslim",
+    is_disabled: false,
+    password: "Password"
+ })
+
+ 
+Donation.create(
+    user_id: "2",
+    donation_name: "Aid Orphans",
+    description: "This donation goes to orphans to help them raise funds to continue with their education.",
+    donation_amount: "USD 6000",
+    region_id: "1",
+    country_code: 221
+
+)
+
+Donation.create(
+    user_id: "2",
+    donation_name: "Feed A Family",
+    description: "This donation will provide the less fortunate families with food.",
+    donation_amount: "USD 3500",
+    region_id: "2",
+    country_code: 260
+)
+
+Donation.create(
+    user_id: "1",
+    donation_name: "AIDS Fund",
+    description: "Money donated will be used to provide ARVs to people living with AIDS",
+    donation_amount: "USD 10000",
+    region_id: "7",
+    country_code: 255
+)
+puts "Done seeding"
+
+
