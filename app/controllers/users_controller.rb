@@ -1,8 +1,9 @@
 
 class UsersController < ApplicationController
  # before_action :set_user, only: [:index ,:show, :update]
- rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
- 
+ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response
+
  # GET /users
   def index
         render json: User.all, status: :ok
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     user = find_user
-    render json: user, status: :ok
+    render json: user
   end
 
   # POST
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
   
     def update
       user = find_user
-      user.update(user_params)
+      user.update!(user_params)
         render json:user, status: :accepted
     end
 
@@ -36,8 +37,13 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def records
+    end
 
-  private
+    
+  
+  
+      private
 
  # Only allow a trusted parameter "white list" through.
 
@@ -67,10 +73,13 @@ class UsersController < ApplicationController
           :password)
       end
 
-  def render_unprocessable_entity_response(e)
-        render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
-  end
-  
+    def render_not_found_response
+        render json: {error: "User not found"}, status: :not_found
+    end
+
+    def unprocessable_entity_response(invalid)
+        render json: {error: invalid.record.errors}, status: :unprocessable_entity
+    end
 
 end
 
