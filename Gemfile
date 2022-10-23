@@ -47,3 +47,9 @@ gem 'active_model_serializers'
 #gem pagy for pagination
 gem 'pagy', '~> 5.10' 
 
+# gem for API documentation
+gem 'rswag'
+
+gem 'rails-helper', '~> 0.1.0'
+
+gem 'rspec-rails' 
