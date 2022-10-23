@@ -3,7 +3,7 @@ class DonationsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response
 
     def index
-        render json: Donation.all
+        render json: Donation.all.then(&paginate)
     end
 
     def show

@@ -1,7 +1,7 @@
 class RegionsController < ApplicationController
 
     def index
-        @region = Region.all
+        @region = Region.all.then(&paginate)
         render json: @region
     end
 
@@ -11,14 +11,14 @@ class RegionsController < ApplicationController
     end
 
     def update
-        region = Region.find_by(id: params [:id])
+        region = Region.find_by(id: params[:id])
         region.update!(region_params)
         render json: region
 
     end
 
     def destroy
-        region = Region.find_by(id: params [:id])
+        region = Region.find_by(id: params[:id])
         region.destroy
         head :no_content
     end

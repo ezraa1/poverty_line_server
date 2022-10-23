@@ -44,3 +44,6 @@ gem "jwt", "~> 2.5"
 # gem serializers
 gem 'active_model_serializers'
 
+#gem pagy for pagination
+gem 'pagy', '~> 5.10' 
+
