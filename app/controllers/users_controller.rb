@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
  # GET /users
   def index
-        render json: User.all, status: :ok
+        render json: User.all.then(&paginate), status: :ok
   end
 
   # GET /users/1
