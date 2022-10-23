@@ -4,6 +4,30 @@ info:
   title: API V1
   version: v1
 paths:
+  "/regions":
+    get:
+      summary: list regions
+      responses:
+        '200':
+          description: successful
+  "/regions/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show region
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete region
+      responses:
+        '200':
+          description: successful
   "/users":
     get:
       summary: list users
