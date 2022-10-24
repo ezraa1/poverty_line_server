@@ -26,6 +26,5 @@ Rails.application.routes.draw do
   delete "/regions/:id", to: "regions#destroy"
 
   
-  
 
 end

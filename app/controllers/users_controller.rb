@@ -17,19 +17,17 @@ class UsersController < ApplicationController
 
   # POST
 
-  def create
-    @user = User.new(user_params)
-    if @user.save and @user.valid?
-      session[:user_id] = @user.id
-      render 'users/new'
+  def create 
+    user = User.create!(user_params)
+    if user.save and user.valid?
+      session[:user_id] = user.id
+      render json: user, status: :created
+
     else
-      render :action => "new"
-    end
+  render json: { errors: ["Invalid email or password"]}, status: :unauthorized
   end
-  # def create 
-  #   user = User.create!(user_params)
-  #   render json: user, status: :created
-  # end
+end
+
 
   # PATCH/PUT /users/1
   
