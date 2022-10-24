@@ -1,0 +1,206 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/donations":
+    get:
+      summary: list donations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create donation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                donation_name:
+                  type: string
+                donation_amount:
+                  type: integer
+                region_id:
+                  type: integer
+              required:
+              - region_id
+              - donation_name
+              - donation_amount
+  "/donations/{id}":
+    parameters:
+    - donation_name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show donation
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update donation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                donation_name:
+                  type: string
+                donation_amount:
+                  type: integer
+                region_id:
+                  type: integer
+              required:
+              - region_id
+              - donation_name
+              - donation_amount
+    put:
+      summary: update donation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                donation_name:
+                  type: string
+                donation_amount:
+                  type: integer
+                region_id:
+                  type: integer
+              required:
+              - region_id
+              - donation_name
+              - donation_amount
+    delete:
+      summary: delete donation
+      responses:
+        '200':
+          description: successful
+  "/regions":
+    get:
+      summary: list regions
+      responses:
+        '200':
+          description: successful
+  "/regions/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show region
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete region
+      responses:
+        '200':
+          description: successful
+  "/users":
+    get:
+      summary: list users
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+              required:
+              - full_name
+              - email
+  "/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show user
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+              required:
+              - full_name
+              - email
+    put:
+      summary: update user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+              required:
+              - full_name
+              - email
+    delete:
+      summary: delete user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: '127.0.0.1:3000/'
