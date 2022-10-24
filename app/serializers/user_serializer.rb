@@ -19,4 +19,5 @@ class UserSerializer < ActiveModel::Serializer
   :is_disabled
 
   has_many :donations
+  belongs_to :region
 end
