@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save and user.valid?
+    if @user.save and @user.valid?
       session[:user_id] = @user.id
       render 'users/new'
     else
