@@ -13,10 +13,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  post "/signup", to: "users#create"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+
+  # USERS_SESSION AUTHENTICATION
+  post '/signup', to: 'sessions#create_account'
+  get '/me', to: 'sessions#auto_login'
+  post '/login', to: 'sessions#login'
+  delete '/logout', to: 'sessions#logout'
   
+  #REGIONS GET/POST/DELETE
   get "/regions", to: "regions#index"
   get "/regions/:id", to: "regions#show"
   delete "/regions/:id", to: "regions#destroy"
