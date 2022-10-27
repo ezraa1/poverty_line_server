@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :donations
-    belongs_to :region
+    # belongs_to :region
     
     enum user_type: {admin: 0, regular: 1}
 
