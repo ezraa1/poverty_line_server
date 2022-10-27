@@ -84,3 +84,4 @@ production:
   database: povertyline_production
   username: povertyline
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  
