@@ -14,5 +14,5 @@ class User < ApplicationRecord
      
     validates :password, length: { in: 6..80 }
    # validates :age, numericality: { only_integer: true }
-    validates :full_name, presence: true,  length: { minimum: 2 }
+   # validates :full_name, presence: true,  length: { minimum: 2 }
 end
