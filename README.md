@@ -90,14 +90,14 @@ Running the application is very straight forward. You can use the following step
 This project was contributed to by:
 
 Gmail - 
-        (bonochieng@gmail.com)
-        (melynatieno@gmail.com)
-        (ezrakipchirchir1034@gmail.com)
-        (bonochieng@gmail.com)
+        * [Bonventure](bonochieng@gmail.com)
+        * [Melyn](melynatieno@gmail.com)
+        * [Ezra](ezrakipchirchir1034@gmail.com)
+        
 Github -
-        [Bonventure](https://github.com/Bonveeee)
-        [Ezra](https://github.com/ezraa1)
-        [Melyn](https://github.com/MelynAtieno)
+        * [Bonventure](https://github.com/Bonveeee)
+        * [Ezra](https://github.com/ezraa1)
+        * [Melyn](https://github.com/MelynAtieno)
 
 [Go Back to the top](#Poverty-Line-Server)
 
