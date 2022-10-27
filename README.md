@@ -90,10 +90,10 @@ Running the application is very straight forward. You can use the following step
 This project was contributed to by:
 
 Gmail - 
-        [Email](bonochieng@gmail.com)
-        [Email](melynatieno@gmail.com)
-        [Email](ezrakipchirchir1034@gmail.com)
-        [Email](bonochieng@gmail.com)
+        (bonochieng@gmail.com)
+        (melynatieno@gmail.com)
+        (ezrakipchirchir1034@gmail.com)
+        (bonochieng@gmail.com)
 Github -
         [Bonventure](https://github.com/Bonveeee)
         [Ezra](https://github.com/ezraa1)
