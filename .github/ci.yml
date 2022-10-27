@@ -1,58 +1,42 @@
-# This workflow uses actions that are not certified by GitHub.  They are
-# provided by a third-party and are governed by separate terms of service,
-# privacy policy, and support documentation.
-#
-# This workflow will install a prebuilt Ruby version, install dependencies, and
-# run tests and linters.
-name: " CI"
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:11
-        ports:
-          - "5432:5432"
-        env:
-          POSTGRES_DB: rails_povetyline
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
-    env:
-      RAILS_ENV: povertyline
-      DATABASE_URL: "postgres://rails:password@localhost:5432/povertyline"
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      # Add or replace dependency steps here
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
-        with:
-          bundler-cache: true
-      # Add or replace database setup steps here
-      - name: Set up database schema
-        run: bin/rails db:schema:load
-      # Add or replace test runners here
-      - name: Run tests
-        run: bin/rake
 
-  lint:
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests .
+name: CI
+  on: [push, pull_request]
+  jobs:
+    test:
+    matrix:
+       # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
+        ruby: ['2.7.x', '3.0.x', '3.1.x']
     runs-on: ubuntu-latest
+       services:
+      db:
+        image: postgres:11
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+   
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
+      - uses: actions/checkout@v1
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
         with:
-          bundler-cache: true
-      # Add or replace any other lints here
-      - name: Security audit dependencies
-        run: bin/bundler-audit --update
-      - name: Security audit application code
-        run: bin/brakeman -q -w2
-      - name: Lint Ruby files
-        run: bin/rubocop --parallel
+          ruby-version: ${{ matrix.ruby }}
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: Build and run tests
+        env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/povertyline
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rails test
