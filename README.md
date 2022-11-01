@@ -12,7 +12,7 @@
  - [Authors](#Authors)
  ## Description
  
- <p>This Repository Contains the Poverty-Line server API.<br> Consumes data through classifying different users across sub-saharan Africa(SSA) inorder to help map out poverty line of different regions. THis aims at helping tackling issues such as poverty eradication,employemnt generation, social integration.
+ <p>This Repository Contains the Poverty-Line server API.<br> Consumes data through classifying different users across Sub-Saharan Africa (SSA) inorder to help map out poverty line of different regions. THis aims at helping tackling issues such as poverty eradication,employemnt generation, social integration.
  </p>
  
 [Go Back to the top](#Poverty-Line-Server)
@@ -22,6 +22,12 @@
     -RESTFUL API endpoints
     - /users  /regions /donations
     -Data Persistence
+    -Validations
+    -Authorization
+## API Documentation
+
+Locally on [API V1 Docs](http://127.0.0.1:3000/api-docs/index.html)
+
 
 [Go Back to the top](#Poverty-Line-Server)
  ##  Requirements
@@ -67,17 +73,18 @@ Running the application is very straight forward. You can use the following step
  
 ### DB Schema DIAGRAM
 
-- ![DB_DIAGRAM](https://dbdiagram.io/d/634fbcf2470941019593beee)
+- [DB_DIAGRAM](https://dbdiagram.io/d/634fbcf2470941019593beee)
 
 ### Technology  Used
 
 * Ruby on Rails
 * Github 
 * Heroku for deployment
+* Figma & dbdiagram.io for designs
 
 [Go Back to the top](#Poverty-Line-Server)
 
-## Known Bugs :bug
+## Known Bugs 
 * 
 * 
 
@@ -89,12 +96,14 @@ Running the application is very straight forward. You can use the following step
 ## Authors
 This project was contributed to by:
 
-Gmail - 
+Email - 
+
         * [Bonventure](bonochieng@gmail.com)
         * [Melyn](melynatieno@gmail.com)
         * [Ezra](ezrakipchirchir1034@gmail.com)
         
 Github -
+
         * [Bonventure](https://github.com/Bonveeee)
         * [Ezra](https://github.com/ezraa1)
         * [Melyn](https://github.com/MelynAtieno)
