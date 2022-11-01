@@ -24,8 +24,8 @@ class UsersController < ApplicationController
       render json: user, status: :created
 
     else
-  render json: { errors: ["Invalid email or password"]}, status: :unauthorized
-  end
+      render json: {errors: [user.errors.full_messages] }, status: :unprocessable_entity
+    end
 end
 
 

@@ -193,6 +193,9 @@ GEM
     rswag-ui (2.7.0)
       actionpack (>= 3.1, < 7.1)
       railties (>= 3.1, < 7.1)
+    ruby_http_client (3.5.5)
+    sendgrid-ruby (6.6.2)
+      ruby_http_client (~> 3.4)
     thor (1.2.1)
     timeout (0.3.0)
     tzinfo (2.0.5)
@@ -220,6 +223,7 @@ DEPENDENCIES
   rails-helper (~> 0.1.0)
   rspec-rails
   rswag
+  sendgrid-ruby
   tzinfo-data
 
 RUBY VERSION
