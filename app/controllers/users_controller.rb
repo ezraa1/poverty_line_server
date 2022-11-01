@@ -18,13 +18,15 @@ class UsersController < ApplicationController
   # POST
 
   def create 
-    user = User.create!(user_params)
-    if user.save and user.valid?
-      session[:user_id] = user.id
-      render json: user, status: :created
+
+    @user = User.create!(user_params)
+    if @user.save and @user.valid?
+      session[:user_id] = @user.id
+      render json: @user, status: :created
+      UserNotifierMailer.send_signup_email(@user).deliver
 
     else
-      render json: {errors: [user.errors.full_messages] }, status: :unprocessable_entity
+      render json: {errors: [@user.errors.full_messages] }, status: :unprocessable_entity
     end
 end
 

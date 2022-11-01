@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
         session[:user_id] ||= user.id
         session[:user_type] ||= user.user_type
         render json: user
+        
     end
 
     #auto login
