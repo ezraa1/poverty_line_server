@@ -54,4 +54,8 @@ gem 'rails-helper', '~> 0.1.0'
 
 gem 'rspec-rails' 
 
+<<<<<<< HEAD
 gem 'sendgrid-ruby'
+=======
+gem 'rack-cors'
+>>>>>>> b0e7f7963cce3bc1cc17ee2031f9fb3900ff5aea

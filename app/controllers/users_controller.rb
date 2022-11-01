@@ -48,7 +48,6 @@ end
     def records
     end
 
-    
   
   
       private
@@ -63,22 +62,25 @@ end
         params.permit(
           :full_name,
           :email,
-          :gender,
-          :age,
-          :city,
-          :country_name,
-          :region_id,
-          :marital_status,
-          :employment_status,
-          :monthly_income,
-          :access_to_safe_water,
-          :access_to_electricity,
-          :medical_insurance,
-          :education_level,
           :user_type,
-          :religion,
-          :is_disabled,
-          :password)
+          :password,
+          :telephone_number,
+         :skills
+          #:gender
+          # :age,
+          # :city,
+          # :country_name,
+          # :region_id,
+          # :marital_status,
+          # :employment_status,
+          # :monthly_income,
+          # :access_to_safe_water,
+          # :access_to_electricity,
+          # :medical_insurance,
+          # :education_level,
+          # :religion,
+          # :is_disabled,
+        )
       end
 
     def render_not_found_response
@@ -94,23 +96,26 @@ end
 
 
 # # Only allow a trusted parameter "white list" through.
-# def user_params
-  # params.permit(
-  #    :full_name,
-  #    :email,
-  #    :gender,
-  #    :age,
-  #    :city,
-  #    :country_name,
-  #    :marital_status,
-  #    :employment_status,
-  #    :monthly_income,
-  #    :access_to_safe_water,
-  #    :access_to_electricity,
-  #    :medical_insurance,
-  #    :education_level,
-  #    :user_type,
-  #    :religion,
-  #    :is_disabled,
-  #    :password)
+# def more_user_params
+#   params.permit(
+#     :full_name,
+#     :email,
+#     :gender,
+#     :age,
+#     :city,
+#     :country_name,
+#     :region_id,
+#     :marital_status,
+#     :employment_status,
+#     :monthly_income,
+#     :access_to_safe_water,
+#     :access_to_electricity,
+#     :medical_insurance,
+#     :education_level,
+#     :user_type,
+#     :religion,
+#     :is_disabled,
+#     :password,
+# :telephone_number,
+# :skills)
 # end
