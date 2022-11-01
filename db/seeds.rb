@@ -79,7 +79,9 @@ Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_na
     education_level: "O-Level",
     religion: "Christian",
     is_disabled: true,
-    password: "Password"
+    password: "Password",
+    telephone_number: 0733341226,
+    skills: "Painter"
  })
 
 
@@ -102,7 +104,9 @@ Region.create!(sub_region: "Western Africa", sub_region_code: "WA01", country_na
     education_level: "High School",
     religion: "Muslim",
     is_disabled: false,
-    password: "Password"
+    password: "Password",
+    telephone_number: 0733331223,
+    skills: "plumbing"
  })
 
  
