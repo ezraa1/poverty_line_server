@@ -78,6 +78,7 @@ Running the application is very straight forward. You can use the following step
 ### Technology  Used
 
 * Ruby on Rails
+* PostgreSQL
 * Github 
 * Heroku for deployment
 * Figma & dbdiagram.io for designs
