@@ -14,5 +14,5 @@ class User < ApplicationRecord
     validates :full_name, presence: true
    
    has_many :donations
-   belongs_to :region
+#    belongs_to :region
 end
