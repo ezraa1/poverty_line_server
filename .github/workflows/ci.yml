@@ -66,7 +66,6 @@ jobs:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MERGE_KEY }}
           PG_USER: postgres
         run: |
-         sudo apt-get -yqq install libpq-dev
          bundle exec rails db:create
          bundle exec rails db:migrate
          bundle exec rails test
