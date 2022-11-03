@@ -29,16 +29,16 @@ class SessionsController < ApplicationController
     end
 
     def logout
-        session.delete :user_id
-        session.delete :user_type
-        head :no_content
-        # user = User.find_by(id: session[:user_id])
-        # if user
-        #     session.delete :user_id
-        #     head :no_content
-        # else
-        #     render json: {errors: ["Not authorized"]}, status: :unauthorized
-        # end
+        # session.delete :user_id
+        # session.delete :user_type
+        # head :no_content
+        user = User.find_by(id: session[:user_id])
+        if user
+            session.delete :user_id
+            head :no_content
+        else
+            render json: {errors: ["Not authorized"]}, status: :unauthorized
+        end
     end
 
     private

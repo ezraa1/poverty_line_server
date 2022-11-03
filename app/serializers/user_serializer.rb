@@ -5,7 +5,7 @@ class UserSerializer < ActiveModel::Serializer
   :user_type,
   :password,
   :telephone_number,
- :skills
+  :skills
   #  :full_name,
   # :email,
   # :gender,
